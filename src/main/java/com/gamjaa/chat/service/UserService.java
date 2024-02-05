@@ -19,7 +19,7 @@ public class UserService {
 
     public void login(WebSocketSession session, LoginReq req) {
         // TODO: 계정 가져오기
-        var user = new ChatUser(1L, req.getId());
+        var user = new ChatUser();
 
         sessionUserMap.put(session.getId(), user);
     }
