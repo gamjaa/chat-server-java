@@ -13,7 +13,7 @@ public class UserService {
 
     private final Map<String, ChatUser> sessionUserMap = new HashMap<>();
 
-    public ChatUser getUser(WebSocketSession session) {
+    public ChatUser getConnectedUser(WebSocketSession session) {
         return sessionUserMap.get(session.getId());
     }
 

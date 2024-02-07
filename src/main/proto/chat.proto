@@ -10,8 +10,8 @@ message MessagePacket {
     SEND  = 2;
   }
 
-  Type type  = 1;
-  bytes payload     = 2;
+  Type type       = 1;
+  bytes payload   = 2;
 }
 
 message LoginReq {
@@ -20,15 +20,24 @@ message LoginReq {
 }
 
 message LoginRes {
-  bool success = 1;
+  bool success                  = 1;
   repeated RoomInfo joinedRooms = 2;
 }
 
 message RoomInfo {
-  string id = 1;
-  string lastMessage = 2;
+  string roomId       = 1;
+  string lastMessage  = 2;
 }
 
 message JoinReq {
-  string id = 1;
+  string roomId = 1;
+}
+
+message LeaveReq {
+  string roomId = 1;
+}
+
+message SendReq {
+  string roomId   = 1;
+  string message  = 2;
 }
